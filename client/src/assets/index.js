@@ -14,6 +14,9 @@ import brandFive from "./brands/brandFive.webp";
 import brandSix from "./brands/brandSix.webp";
 import productPayment from "./productPayment.webp";
 import homeBanner from "./homeBanner.jpg";
+import shipping from "./shipping.png";
+import warranty from "./warranty.png";
+import trade from "./trade.png";
 
 export {
   logo,
@@ -32,4 +35,7 @@ export {
   brandSix,
   productPayment,
   homeBanner,
+  shipping,
+  warranty,
+  trade,
 };

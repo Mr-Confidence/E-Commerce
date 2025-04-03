@@ -4,6 +4,8 @@ import {IoClose, IoSearchOutline} from "react-icons/io5";
 import {FiShoppingBag, FiStar, FiUser} from "react-icons/fi";
 import Container from "./Container";
 import {FaChevronDown} from "react-icons/fa6";
+import {Link} from "react-router-dom";
+
 
 const bottomNavigation = [
   { title: "Home", link: "/" },
@@ -19,7 +21,9 @@ function  Header() {
   return <div className="w-full bg-whiteText">
     <div className="max-w-screen-xl mx-auto h-20 flex items-center justify-between px-4 lg:px-0">
     {/* Logo */}
-      <img src={logo}  alt="logo" className="w-44"/>
+    <Link to="/">
+    <img src={logo}  alt="logo" className="w-44"/>
+    </Link>
       {/* Search Bar */}
       <div className="hidden md:inline-flex max-w-3xl w-full relative">
         <input type="text" onChange={(e) => setSearchText(e.target.value)} value={searchText} placeholder="Search products..." className="w-full flex-1 rounded-full text-gray-900 text-lg placeholder:text-base placeholder:tracking-wide shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 placeholder:font-normal focus:ring-2 focus:ring-darkText sm:text-sm px-4 py-2"/>
@@ -30,18 +34,24 @@ function  Header() {
             />
           ) : (
             <IoSearchOutline className="absolute top-2.5 right-4 text-xl" />
-          )}      </div>
+          )}      
+          </div>
       {/* Menubar */}
       <div className="flex items-center gap-6 text-2xl">
-        <FiUser className="hover:text-skyText duration-200 cursor-pointer"/>
-        <div className="relative block">
-        <FiStar className="hover:text-skyText duration-200 cursor-pointer"/>
-        <span className="inline-flex items-center justify-center bg-red-500 text-whiteText absolute -top-1 -right-2 text-[9px] rounded-full w-4 h-4">0</span>
-        </div>
-        <div className="relative block">
+          <Link to="/profile">
+            <FiUser className="hover:text-skyText duration-200 cursor-pointer"/>
+          </Link>
+          {/* Favorites */}
+          <Link to="/favorite" className="relative block">
+          <FiStar className="hover:text-skyText duration-200 cursor-pointer"/>
+  <span className="inline-flex items-center justify-center bg-red-500 text-whiteText absolute -top-1 -right-2 text-[9px] rounded-full w-4 h-4">0</span>
+</Link>
+
+
+        <Link to="/cart" className="relative block">
         <FiShoppingBag className="hover:text-skyText duration-200 cursor-pointer"/>
         <span className="inline-flex items-center justify-center bg-red-500 text-whiteText absolute -top-1 -right-2 text-[9px] rounded-full w-4 h-4">0</span>
-        </div>
+        </Link>
 
       </div>
     </div>
@@ -52,15 +62,16 @@ function  Header() {
           </p>
           {
             bottomNavigation.map(({title, link}) => (
-             <div key={title}>
-              
-             </div>
+              <Link to={link}
+              key={title} className="uppercase hidden md:inline-flex text-sm font-semibold text-whiteText/90 hover:text-whiteText duration-200 relative overflow-hidden group">
+                {title}
+                <span className="inline-flex w-full h-[1px] bg-whiteText absolute -bottom-0 left-0 transform -translate-x-[105%] group-hover:translate-x-0 transition-all duration-200" />
+              </Link>
             ))
           }
       </Container>
     </div>
-    </div>;
+  </div>
 }
-
 export default Header;
   
