@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { logo } from "../assets";
 import {IoClose, IoSearchOutline} from "react-icons/io5";
 import {FiShoppingBag, FiStar, FiUser} from "react-icons/fi";
 import Container from "./Container";
 import {FaChevronDown} from "react-icons/fa6";
+import {Menu, MenuButton, MenuItem, MenuItems, Transition} from "@headlessui/react";
 import {Link} from "react-router-dom";
-
+import {config} from "../../config";
 
 const bottomNavigation = [
   { title: "Home", link: "/" },
@@ -18,6 +19,21 @@ const bottomNavigation = [
 
 function  Header() {
   const [searchText, setSearchText] = useState(""); 
+  const [categories, setCategories] = useState([]);
+  
+  useEffect(()=>{
+    const fetchData = async()=>{
+      const endpoint = `${config?.baseUrl}/categories`;
+      try{
+        const data = await getData(endpoint);
+        setCategories(data);
+      }catch(error){
+        console.error("Error fetching categories:", error);
+      }
+    }
+    fetchData();
+  },[])
+
   return <div className="w-full bg-whiteText">
     <div className="max-w-screen-xl mx-auto h-20 flex items-center justify-between px-4 lg:px-0">
     {/* Logo */}
@@ -57,9 +73,12 @@ function  Header() {
     </div>
     <div className="w-full bg-darkText text-whiteText">
       <Container className="py-2 max-w-4xl flex items-center justify-between">
-        <p className="flex items-center gap-1">
-          Select Category <FaChevronDown />
-          </p>
+        <Menu>
+          <MenuButton className="inline-flex item-center gap-2 rounded-md border border-gray-400 hover:border-white py-1.5 px-3 font-semibold text-gray-300 hover:text-whitetext">
+            Select Category
+            <FaChevronDown className="ml-2" />
+          </MenuButton>
+        </Menu>
           {
             bottomNavigation.map(({title, link}) => (
               <Link to={link}
