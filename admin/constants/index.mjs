@@ -16,7 +16,7 @@ const cat = {
     {
       _id: 1001,
       name: "TV & Audio",
-      image: "https://i.ibb.co/kM0FR2h/cat-Tv-Audio.webp",
+      image: "https://img.icons8.com/?size=100&id=Vdu0R7J70qRi&format=png&color=000000",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
       _base: "tvAndAudio",

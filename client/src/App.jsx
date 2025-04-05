@@ -1,15 +1,13 @@
-import Container from "./ui/container";
-import Footer from "./ui/Footer";
-import Header from "./ui/Header";
+import BannerCategories from "./ui/BannerCategories";
+import 'react-multi-carousel/lib/styles.css';
+import HomeBanner from "./ui/HomeBanner";
 
 function App() {
   return (
     <main>
-      <Container>
-        <p>Hello World</p>
-      </Container>
-    </main>
-  );
+      <BannerCategories />
+      <HomeBanner />
+    </main>);
 }
 
 export default App;
