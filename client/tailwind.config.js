@@ -12,6 +12,8 @@ module.exports = {
         greenText: "#1d8221",
         redText: "#e02b2b",
         skyText: "#32bde8",
+        maronText: "#8b225a",
+
       },
 
       flex: {full: "0 0 100%"},

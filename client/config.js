@@ -9,7 +9,7 @@ const checkConfig = (server) => {
         break;
       case "local":
         config = {
-          baseUrl: "http://localhost:7000",
+          baseUrl: "http://localhost:8000",
         };
         break;
       default:

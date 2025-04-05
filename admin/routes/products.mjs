@@ -11,7 +11,7 @@ router.get("/products/:id", (req, res) => {
   const productId = parseInt(req.params.id);
   const product = products.find((item) => item._id === productId);
 
-  if (!productId) {
+  if (!productId || !product) {
     return res.status(404).json({ message: "Single Phone was not found" });
   }
   res.send(product);

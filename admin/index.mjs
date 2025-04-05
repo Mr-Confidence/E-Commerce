@@ -6,7 +6,7 @@ import { fileURLToPath } from "url"
 import path from "path"
 import {readdirSync} from "fs"
 
-const port  = process.env.PORT || 7000
+const port  = process.env.PORT || 8000
 app.use(cors())
 app.use(express.json())
 
