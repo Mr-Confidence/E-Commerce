@@ -16,7 +16,7 @@ const cat = {
     {
       _id: 1001,
       name: "TV & Audio",
-      image: "https://img.icons8.com/?size=100&id=Vdu0R7J70qRi&format=png&color=000000",
+      image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
       _base: "tvAndAudio",
@@ -24,7 +24,7 @@ const cat = {
     {
       _id: 1002,
       name: "TV Box",
-      image: "https://i.ibb.co/71hR65V/catTvBox.webp",
+      image: "https://m.media-amazon.com/images/I/81pieXC63IL._AC_SL1500_.jpg",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
       _base: "tvBox",
@@ -32,7 +32,7 @@ const cat = {
     {
       _id: 1003,
       name: "Power Tools",
-      image: "https://i.ibb.co/0V0g6Gz/cat-Powertool.webp",
+      image: "https://img.freepik.com/free-psd/cordless-drill-power-tool-orange-black-construction-repair-home-improvement_632498-48375.jpg?semt=ais_hybrid&w=740",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
       _base: "powerTools",
@@ -40,7 +40,7 @@ const cat = {
     {
       _id: 1004,
       name: "Headphones",
-      image: "https://i.ibb.co/zST2Xdp/cat-Headphone.webp",
+      image: "https://png.pngtree.com/png-vector/20241106/ourlarge/pngtree-elegant-red-headphone-png-image_14301774.png",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
       _base: "headphones",
@@ -48,7 +48,7 @@ const cat = {
     {
       _id: 1005,
       name: "Cell Phones",
-      image: "https://i.ibb.co/jgk59BL/catPhone.webp",
+      image: "https://m.media-amazon.com/images/I/61cTi9MBqOL._AC_SL1500_.jpg",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
       _base: "cellPhones",
@@ -56,7 +56,7 @@ const cat = {
     {
       _id: 1006,
       name: "Smart Watches",
-      image: "https://i.ibb.co/B4NKfBZ/cat-Smart-Watch.webp",
+      image: "https://istarmax.com/wp-content/uploads/2024/04/Starmax-Product-Range-Summer-2024-2.png",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
       _base: "smartWatches",
@@ -64,7 +64,7 @@ const cat = {
     {
       _id: 1007,
       name: "Game & Video",
-      image: "https://i.ibb.co/4gwLwT2/cat-Gaming.webp",
+      image: "https://www.digitaltrends.com/wp-content/uploads/2022/07/Xbox-Series-X-and-Playstation-5-ps5.jpg",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
       _base: "gameAndVideo",
@@ -72,7 +72,7 @@ const cat = {
     {
       _id: 1008,
       name: "Robot Clean",
-      image: "https://i.ibb.co/xjpdQrr/cat-Robot-Clean.webp",
+      image: "https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1735571876/Croma%20Assets/Small%20Appliances/Vacuum%20Cleaners/Images/312488_bvgyqz.png?tr=w-600",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
       _base: "robotClean",
@@ -80,7 +80,7 @@ const cat = {
     {
       _id: 1009,
       name: "Sport Watches",
-      image: "https://i.ibb.co/HdNVLzh/cat-Sport-Watch.webp",
+      image: "https://img.kwcdn.com/product/fancy/22ec1d48-2700-4f27-8d54-2443c9156be2.jpg?imageView2/2/w/500/q/60/format/webp",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
       _base: "sportWatches",
@@ -88,7 +88,7 @@ const cat = {
     {
       _id: 1010,
       name: "Tablets",
-      image: "https://i.ibb.co/qCzTx4F/cat-Tablet.webp",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkjkupmeqJ6fVjXbkuoqikn_vcFa3Y7auYLDG-SA39qrqC-xYBweE-sgHFO-yn8uI0Dg8&usqp=CAU",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
       _base: "tablets",
@@ -96,7 +96,7 @@ const cat = {
     {
       _id: 1011,
       name: "Computers & Laptop",
-      image: "https://i.ibb.co/74bZ8PH/cat-Computer.webp",
+      image: "https://cdn.gamenotebaku.az/productimg/108/419/gamenote_img_62_1710434995.png.webp",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
       _base: "computersAndLaptop",
@@ -104,7 +104,7 @@ const cat = {
     {
       _id: 1012,
       name: "Cameras & Photos",
-      image: "https://i.ibb.co/SVQVWSS/cat-Camera.webp",
+      image: "https://m.media-amazon.com/images/I/718DXOeP5vL.jpg",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
       _base: "camerasAndPhotos",
@@ -115,9 +115,9 @@ const cat = {
     {
       _id: 3001,
       name: "New Deals at Best Prices",
-      title: "From $40.00",
+      title: "From $4000.00",
       buttonTitle: "Browse Deals",
-      image: "https://i.ibb.co/G951N5B/highlights-One.webp",
+      image: "https://90a1c75758623581b3f8-5c119c3de181c9857fcb2784776b17ef.ssl.cf2.rackcdn.com/0676198_659805.jpg",
       _base: "/product",
       color: "#000000",
     },
@@ -126,7 +126,7 @@ const cat = {
       name: "Colorful Redmi  Note 6 Pro",
       title: "From $40.00",
       buttonTitle: "Shop Cellphone",
-      image: "https://i.ibb.co/bLRNKGq/highlights-Two.webp",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEugZErajPeF-7t8aeBtRR-kYsgP-ehcfojki5_vsK9sHKk5LfH8sphOuibSb-9BlbQSs&usqp=CAU",
       _base: "/category/cellPhones",
       color: "#ffffff",
     },

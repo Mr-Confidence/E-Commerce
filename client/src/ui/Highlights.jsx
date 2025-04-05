@@ -1,6 +1,9 @@
 import Container from './Container';
 import React, { useEffect, useState } from 'react';
 import { config } from '../../config';
+import { Link } from 'react-router-dom';
+import { HighlightsType } from '../../type';
+
 
 
 const Highlights = () => {
@@ -44,12 +47,15 @@ const Highlights = () => {
               color: highlight.color || '#fff', // Fallback color if none provided
             }}
           ></div>
-          {/* Overlay for text */}
-          <div className="absolute inset-0 bg-black/40 z-10 flex flex-col justify-center items-center text-white p-4">
-            <h3 className="text-xl font-bold">{highlight.name}</h3>
-            <p className="text-sm">{highlight.title}</p>
+            {/* <div className='relative z-10 p-6 flex flex-col justify-between h-full'> */}
+          <div className='relative z-10 p-6 flex flex-col justify-between h-full'>
+           <div>
+           <h3 className="text-xl font-bold">{highlight.name}</h3>
+           <p className="text-sm">{highlight.title}</p>
+           </div>
+           <Link  to={`/${highlight._base}`}>{highlight.buttonTitle}</Link>
           </div>
-        </div>
+          </div>
       ))}
     </Container>
   );
