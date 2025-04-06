@@ -48,12 +48,15 @@ const Highlights = () => {
             }}
           ></div>
             {/* <div className='relative z-10 p-6 flex flex-col justify-between h-full'> */}
-          <div className='relative z-10 p-6 flex flex-col justify-between h-full'>
+          <div className='relative z-10 p-6 flex flex-col justify-between h-full'
+                style={{
+                  color: highlight.color || '#fff',
+                }}>
            <div>
-           <h3 className="text-xl font-bold">{highlight.name}</h3>
-           <p className="text-sm">{highlight.title}</p>
+           <h3 className="text-2xl font-bold max-w-44">{highlight.name}</h3>
+           <p className="text-base font-bold mt-4">{highlight.title}</p>
            </div>
-           <Link  to={`/${highlight._base}`}>{highlight.buttonTitle}</Link>
+           <Link  to={`/${highlight._base}`} className="text-base font-normal">{highlight.buttonTitle}</Link>
           </div>
           </div>
       ))}

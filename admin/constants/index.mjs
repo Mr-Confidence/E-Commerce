@@ -16,7 +16,7 @@ const cat = {
     {
       _id: 1001,
       name: "TV & Audio",
-      image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      image: "https://www.kigalidiscount.com/cdn/shop/files/wbbbb_60245703-b801-4c6b-b2c3-067fa65dc4d3_800x.png?v=1699368024",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
       _base: "tvAndAudio",
@@ -32,7 +32,7 @@ const cat = {
     {
       _id: 1003,
       name: "Power Tools",
-      image: "https://img.freepik.com/free-psd/cordless-drill-power-tool-orange-black-construction-repair-home-improvement_632498-48375.jpg?semt=ais_hybrid&w=740",
+      image: "https://dam.thdstatic.com/content/production/UOkOZqrY_9FOZXCijltynQ/Ox4tEx11QjCqLYCBC1Kr9w/Original%20file/eb9fe5ce-a6ae-4f07-b949-2e60b2911a19_300DPI_1000px-DCD794D1_3.jpeg?im=Resize=(703,703)",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
       _base: "powerTools",
@@ -40,7 +40,7 @@ const cat = {
     {
       _id: 1004,
       name: "Headphones",
-      image: "https://png.pngtree.com/png-vector/20241106/ourlarge/pngtree-elegant-red-headphone-png-image_14301774.png",
+      image: "https://m.media-amazon.com/images/I/51aHcGncblL._AC_SL1000_.jpg",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
       _base: "headphones",
@@ -56,7 +56,7 @@ const cat = {
     {
       _id: 1006,
       name: "Smart Watches",
-      image: "https://istarmax.com/wp-content/uploads/2024/04/Starmax-Product-Range-Summer-2024-2.png",
+      image: "https://m.media-amazon.com/images/I/61yEHZXdi6L._AC_UF1000,1000_QL80_.jpg",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
       _base: "smartWatches",
@@ -64,7 +64,7 @@ const cat = {
     {
       _id: 1007,
       name: "Game & Video",
-      image: "https://www.digitaltrends.com/wp-content/uploads/2022/07/Xbox-Series-X-and-Playstation-5-ps5.jpg",
+      image: "https://mcprod.hnak.com/media/catalog/product/4/3/43e273011a41e402386a5a3e6073ece636ab8b41ca8e3a532157ed973f89ddd6.jpeg?quality=60&fit=bounds&height=&width=",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
       _base: "gameAndVideo",
@@ -72,7 +72,7 @@ const cat = {
     {
       _id: 1008,
       name: "Robot Clean",
-      image: "https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1735571876/Croma%20Assets/Small%20Appliances/Vacuum%20Cleaners/Images/312488_bvgyqz.png?tr=w-600",
+      image: "https://supplymaster.store/cdn/shop/files/karcher-karcher-robotic-vacuum-cleaner-with-wiping-function-rcv-3-steam-vacuum-cleaner-32517717950598.jpg?v=1717834517&width=1214",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
       _base: "robotClean",
@@ -80,7 +80,7 @@ const cat = {
     {
       _id: 1009,
       name: "Sport Watches",
-      image: "https://img.kwcdn.com/product/fancy/22ec1d48-2700-4f27-8d54-2443c9156be2.jpg?imageView2/2/w/500/q/60/format/webp",
+      image: "https://m.media-amazon.com/images/I/91vtZGxK0JL._AC_SL1500_.jpg",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
       _base: "sportWatches",
@@ -88,7 +88,7 @@ const cat = {
     {
       _id: 1010,
       name: "Tablets",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkjkupmeqJ6fVjXbkuoqikn_vcFa3Y7auYLDG-SA39qrqC-xYBweE-sgHFO-yn8uI0Dg8&usqp=CAU",
+      image: "https://ishop.com.gh/images/ipadhome/air10/ipad-air-10-all.jpg",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
       _base: "tablets",
