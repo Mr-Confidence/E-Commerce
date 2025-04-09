@@ -1,6 +1,7 @@
 import React from 'react';
 import { ProductProps } from '../../type';
 import { MdOutlineStarOutline, MdOutlineStarHalf, MdOutlineStar } from 'react-icons/md';
+import AddToCartButton from './AddToCartButton';
 
 const ProductCart = ({ product }) => {
   // Add null checks and fallbacks
@@ -58,6 +59,9 @@ const ProductCart = ({ product }) => {
               )}
             </div>
           )}
+          <div className="mt-2">
+            <AddToCartButton />
+          </div>
         </div>
       )}
     </div>
