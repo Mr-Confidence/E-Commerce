@@ -4,6 +4,7 @@ import Categories from "./ui/Categories";
 import HomeBanner from "./ui/HomeBanner";
 import Highlights from "./ui/Highlights";
 import ProductList from "./ui/ProductList";
+import Blog from "./ui/Blog";
 import DiscountBanner from "./ui/DiscountBanner";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Categories />
       <ProductList />
       <DiscountBanner />
+      <Blog />
     </main>
   );
 }

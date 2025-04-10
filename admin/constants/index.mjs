@@ -144,7 +144,7 @@ const cat = {
   export const blogsData = [
     {
       _id: 4001,
-      image: "https://i.ibb.co/XbQf5HS/blogOne.webp",
+      image: "https://i.ytimg.com/vi/JbmdKwMFx5A/maxresdefault.jpg",
       title: "iPhone 15 rear camera design will be available",
       _base: "Technology",
       description:
@@ -152,7 +152,7 @@ const cat = {
     },
     {
       _id: 4002,
-      image: "https://i.ibb.co/wzNpcwp/blogTwo.webp",
+      image: "https://static.bhphotovideo.com/explora/sites/default/files/TS1-CTV-4466-Choosing-a-Surround-Sound-System.jpg",
       title: "Setup your surround sound speaker",
       _base: "Samrt thing",
       description:
@@ -160,7 +160,7 @@ const cat = {
     },
     {
       _id: 4003,
-      image: "https://i.ibb.co/prdZ3s8/blog-Three.webp",
+      image: "https://www.mydomaine.com/thmb/I5UQtJB13nCvUQb2ygbao5QbRN8=/1630x0/filters:no_upscale():strip_icc()/art-deco-f48cf28f73904a60ade1c30626130f0f.png",
       title: "Hook up a receiver for your home theater",
       _base: "Life style",
       description:
