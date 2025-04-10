@@ -1,56 +1,82 @@
 import React, { useState } from 'react';
-import { ProductProps } from '../../type';
 import { MdOutlineStarOutline, MdOutlineStarHalf, MdOutlineStar } from 'react-icons/md';
 import AddToCartButton from './AddToCartButton';
-import { Transition, TransitionChild } from '@headlessui/react'; 
+import { Transition, TransitionChild } from '@headlessui/react';
 import { Dialog, DialogPanel, DialogTitle, Button } from '@headlessui/react';
+import FormattedPrice from './FormattedPrice';
+import ProductCardSideNav from './ProductCardSideNav';
+import { useNavigate } from 'react-router-dom';
 
+const ProductCart = ({ product, setSearchText }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
-const ProductCart = ({ product }) => {
-  const [isOpen, setIsOpen] = useState(false); 
-  const open =() => {
-    setIsOpen(true);
-  }
-  const close =() => {
-    setIsOpen(false);
-  }
-  // Add null checks and fallbacks
+  // Calculate values
   const percentage = product?.discountedPrice && product?.regularPrice ? 
-    ((product?.regularPrice - product?.discountedPrice) / product?.regularPrice) * 100 : 0;
+    Math.round(((product.regularPrice - product.discountedPrice) / product.regularPrice) * 100) : 0;
+  
   const firstImage = product?.images?.[0] || '/placeholder.jpg';
   const productName = product?.name || 'Product';
   
-  // Calculate rating (assuming product.rating is a number between 0-5)
+  // Calculate rating components
   const rating = product?.rating || 0;
   const fullStars = Math.floor(rating);
   const hasHalfStar = rating % 1 >= 0.5;
   const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+  
+  // Generate realistic review count
+  const reviewCount = product?.reviews?.length || Math.floor(Math.random() * 9000000) + 1000000;
+
+  // Format numbers with commas
+  const formatNumber = num => num?.toLocaleString() || '0';
+
+  // Handlers
+  const openDialog = () => setIsOpen(true);
+  const closeDialog = () => setIsOpen(false);
+  const handleProductClick = () => {
+    navigate(`/product/${product?._id}`);
+    setSearchText?.("");
+  };
+
+  if (!product) return null;
 
   return (
-    <div className='border border-gray-200 rounded-lg p-1 overflow-hidden hover:border-black duration-200 cursor-pointer'>
-      <div className="w-full h-60 relative p-2 group">
-        <span onClick={open} className='bg-black text-skyText absolute left-0 right w-16 text-xs text-center py-1 rounded-md font-semibold inline-block z-10'>
-          save {percentage.toFixed(0)}%
+    <div className="border border-gray-200 rounded-lg p-1 overflow-hidden hover:border-black duration-200 cursor-pointer group">
+      {/* Product Image with Discount Badge */}
+      <div className="w-full h-60 relative p-2">
+        <span 
+          onClick={openDialog}
+          className="bg-black text-skyText absolute left-0 top-2 w-16 text-xs text-center py-1 rounded-md font-semibold inline-block z-10 hover:bg-gray-800 transition-colors"
+          aria-label={`Save ${percentage}%`}
+        >
+          Save {percentage}%
         </span>
         <img 
           src={firstImage} 
           alt={productName}
-          className='w-full h-full rounded-md object-cover group-hover:scale-110 duration-300'
-          onError={(e) => {
-            e.target.onerror = null;
-            e.target.src = '/placeholder.jpg';
-          }}
+          onClick={handleProductClick}
+          className="w-full h-full rounded-md object-cover group-hover:scale-110 duration-300"
+          loading="lazy"
+          onError={(e) => (e.target.src = '/placeholder.jpg')}
         />
+        <ProductCardSideNav product={product} />
       </div>
-      <div className='flex flex-col gap-2 px-2 pb-2'>
-        <h3 className='text-xs uppercase font-semibold text-lightText'>{product?.overView}</h3>
-      </div>
-      {product?.name && (
-        <div className='p-2'>
-          <h2 className='text-lg font-bold line-clamp-2'>{product.name}</h2>
-          
-          {/* Star Rating */}
-          <div className="flex items-center gap-1 my-1 text-yellow-400">
+     
+      {/* Product Info */}
+      <div className="p-3 space-y-2">
+        {product?.overView && (
+          <h3 className="text-xs uppercase font-semibold text-lightText truncate">
+            {product.overView}
+          </h3>
+        )}
+
+        <h2 className="text-lg font-bold line-clamp-2" title={productName}>
+          {productName}
+        </h2>
+        
+        {/* Star Rating with Review Count */}
+        <div className="flex items-center gap-1">
+          <div className="flex text-yellow-400">
             {[...Array(fullStars)].map((_, i) => (
               <MdOutlineStar key={`full-${i}`} />
             ))}
@@ -58,65 +84,77 @@ const ProductCart = ({ product }) => {
             {[...Array(emptyStars)].map((_, i) => (
               <MdOutlineStarOutline key={`empty-${i}`} />
             ))}
-            <span className="text-xs text-gray-500 ml-1">({product?.reviews || 0})</span>
           </div>
-          
-          {product.discountedPrice && (
-            <div className="flex items-center gap-2">
-              <p className='text-gray-900 font-bold'>${product.discountedPrice}</p>
-              {product.regularPrice && product.discountedPrice < product.regularPrice && (
-                <p className='text-sm text-gray-500 line-through'>${product.regularPrice}</p>
-              )}
-            </div>
-          )}
-          <div className="mt-2">
-            <AddToCartButton />
-          </div>
-          <Transition appear show={isOpen}>
-              <Dialog as="div" className="relative z-10 focus:outline-none" onClose={close}>
-                <div className='fixed inset-0 z-10 w-screen overflow-y-auto'>
-                  <div className='flex min-h-full items-center justify-center p-4'>
-                  <TransitionChild 
-                   enter="ease-out duration-300"
-                   enterFrom="opacity-0 transform-[scale(95%)]"
-                   enterTo="opacity-100 transform-[scale(100%)]"
-                   leave="ease-in duration-200"
-                   leaveFrom="opacity-100 transform-[scale(100%)]"
-                   leaveTo="opacity-0 transform-[scale(95%)]"
-                  >
-                    <DialogPanel className="w-full max-w-md rounded-xl bg-black backdrop-blur-2xl z-50 p-6">
-                      <DialogTitle as="h3" className="text-base/7 font-medium text-whiteText"> 
-                        Hurry up!!!
-                      </DialogTitle>
-                      <p className="mt-2 text-sm/6 text-white/50">
-                    You are going to save{" "}
-                    <span className="text-skyText">
-                      {/* <FormattedPrice
-                        amount={product?.regularPrice - product?.discountedPrice}
-                      />{" "} */}
-                    </span>
-                    from this product.
-                  </p>
-                  <p className="text-sm/6 text-white/50">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Sequi, consequatur?
-                  </p>
-                  <div className="mt-4">
-                    <Button
-                      className="inline-flex items-center gap-2 rounded-md bg-gray-700 py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-600 data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white"
-                      onClick={close}
-                    >
-                      Got it, thanks!
-                    </Button>
-                  </div>
-                    </DialogPanel>
-                  </TransitionChild>
-                  </div>
-                </div>
-              </Dialog>
-          </Transition>
+          <span className="text-xs text-gray-500 ml-1">
+            ({formatNumber(reviewCount)} reviews)
+          </span>
         </div>
-      )}
+        
+        {/* Pricing */}
+        <div className="flex items-center gap-2">
+          <p className="text-gray-900 font-bold">
+            <FormattedPrice amount={product.discountedPrice} />
+          </p>
+          {product.regularPrice && product.discountedPrice < product.regularPrice && (
+            <p className="text-sm text-gray-500 line-through">
+              <FormattedPrice amount={product.regularPrice} />
+            </p>
+          )}
+        </div>
+
+        {/* Add to Cart Button */}
+        <div className="mt-3">
+          <AddToCartButton product={product} />
+        </div>
+      </div>
+
+      {/* Enhanced Discount Dialog */}
+      <Transition appear show={isOpen}>
+        <Dialog as="div" className="relative z-50" onClose={closeDialog}>
+          <div className="fixed inset-0 bg-black/30 backdrop-blur-sm" />
+          <div className="fixed inset-0 flex items-center justify-center p-4">
+            <TransitionChild
+              enter="ease-out duration-300"
+              enterFrom="opacity-0 scale-95"
+              enterTo="opacity-100 scale-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100 scale-100"
+              leaveTo="opacity-0 scale-95"
+            >
+              <DialogPanel className="w-full max-w-md rounded-xl bg-gray-900 p-6 shadow-xl">
+                <DialogTitle as="h3" className="text-lg font-bold text-white">
+                  Limited Time Offer!
+                </DialogTitle>
+                
+                <div className="mt-4 space-y-2">
+                  <p className="text-gray-300">
+                    You're saving <span className="text-skyText font-bold">
+                      <FormattedPrice amount={product.regularPrice - product.discountedPrice} />
+                    </span> ({percentage}% off)
+                  </p>
+                  <p className="text-gray-300">
+                    Product rating: {rating.toFixed(1)} stars ({formatNumber(reviewCount)} reviews)
+                  </p>
+                </div>
+
+                <div className="mt-6 flex justify-end gap-3">
+                  <Button
+                    className="px-4 py-2 text-sm font-medium text-white bg-gray-700 rounded-md hover:bg-gray-600"
+                    onClick={closeDialog}
+                  >
+                    Continue Shopping
+                  </Button>
+                  <AddToCartButton 
+                    product={product}
+                    className="bg-skyText hover:bg-skyText/90 text-white"
+                    onClick={closeDialog}
+                  />
+                </div>
+              </DialogPanel>
+            </TransitionChild>
+          </div>
+        </Dialog>
+      </Transition>
     </div>
   );
 };
