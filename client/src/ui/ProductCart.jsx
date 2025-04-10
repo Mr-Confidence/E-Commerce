@@ -31,7 +31,10 @@ const ProductCart = ({ product, setSearchText }) => {
   const formatNumber = num => num?.toLocaleString() || '0';
 
   // Handlers
-  const openDialog = () => setIsOpen(true);
+  const openDialog = (e) => {
+    e.stopPropagation();
+    setIsOpen(true);
+  };
   const closeDialog = () => setIsOpen(false);
   const handleProductClick = () => {
     navigate(`/product/${product?._id}`);
@@ -41,7 +44,10 @@ const ProductCart = ({ product, setSearchText }) => {
   if (!product) return null;
 
   return (
-    <div className="border border-gray-200 rounded-lg p-1 overflow-hidden hover:border-black duration-200 cursor-pointer group">
+    <div 
+      className="border border-gray-200 rounded-lg p-1 overflow-hidden hover:border-black duration-200 cursor-pointer group"
+      onClick={handleProductClick}
+    >
       {/* Product Image with Discount Badge */}
       <div className="w-full h-60 relative p-2">
         <span 
@@ -54,12 +60,13 @@ const ProductCart = ({ product, setSearchText }) => {
         <img 
           src={firstImage} 
           alt={productName}
-          onClick={handleProductClick}
           className="w-full h-full rounded-md object-cover group-hover:scale-110 duration-300"
           loading="lazy"
           onError={(e) => (e.target.src = '/placeholder.jpg')}
         />
-        <ProductCardSideNav product={product} />
+        <div onClick={(e) => e.stopPropagation()}>
+          <ProductCardSideNav product={product} />
+        </div>
       </div>
      
       {/* Product Info */}
@@ -103,7 +110,7 @@ const ProductCart = ({ product, setSearchText }) => {
         </div>
 
         {/* Add to Cart Button */}
-        <div className="mt-3">
+        <div className="mt-3" onClick={(e) => e.stopPropagation()}>
           <AddToCartButton product={product} />
         </div>
       </div>
