@@ -326,7 +326,7 @@ const cat = {
         "https://images-cdn.ubuy.co.in/6441567475d14259fb674414-new-in-sealed-beats-by-dr-dre-studio.jpg",
         "https://www-konga-com-res.cloudinary.com/f_auto,fl_lossy,dpr_3.0,q_auto/media/catalog/product/J/T/122138_1721390743.jpg",
         "https://media.istockphoto.com/id/1471767738/photo/a-cheerful-woman-laughing-dancing-and-enjoying-music-while-standing-isolated-on-red-background.jpg?s=612x612&w=0&k=20&c=0ydiqllmvz0XxhjoPHEwZoy8z83g2rk7uIpVbs54pgs=",
-        "https://i.ibb.co/tcdSfrr/blueGun.jpg",
+        "https://www.tccq.com/image/cache/catalog/1233015/Beats%20Solo3%20Wireless%20On-Ear%20Headphones%20-%20Red%20(4)-600x600.jpg",
         "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/6a35b4147099205.62bc3f0807d71.jpg",
       ],
       description:
