@@ -42,7 +42,7 @@ const Blog = () => {
             </div>
             <div className="mt-5">
               <p className="text-sm uppercase font-medium text-gray-500">
-                {blog?.category || "Uncategorized"}
+                {blog?._base || "Uncategorized"}
               </p>
               <p className="text-2xl font-bold line-clamp-1">
                 {blog?.title}
