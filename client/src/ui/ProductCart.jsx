@@ -38,7 +38,7 @@ const ProductCart = ({ product, setSearchText }) => {
   const closeDialog = () => setIsOpen(false);
   const handleProductClick = () => {
     navigate(`/product/${product?._id}`);
-    setSearchText?.("");
+    setSearchText && setSearchText("");
   };
 
   if (!product) return null;

@@ -2,7 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
-import { Outlet } from 'react-router'
+import { Outlet, ScrollRestoration } from 'react-router'
 import Layout from './ui/Layout'
 import { createBrowserRouter, RouterProvider } from 'react-router'
 import Product from './pages/Product'
@@ -19,6 +19,7 @@ import NotFound from './pages/NotFound'
 const RouterLayout = () => {
   return (
     <Layout>
+      <ScrollRestoration />
       <Outlet />
     </Layout>
   )
